@@ -11,7 +11,7 @@ const FinancialInstitutionItemCard = ({ onPress, name, ifsc, branchName, company
             marginBottom: spacing.md,
             borderWidth: StyleSheet.hairlineWidth,
             borderColor: colors.black300,
-            borderRadius: spacing.lg,
+            borderRadius: spacing.xs,
         },
         cardHeader: {
             flexDirection: "row", 
@@ -39,7 +39,7 @@ const FinancialInstitutionItemCard = ({ onPress, name, ifsc, branchName, company
         },
         name: {
             fontFamily: fontFamily.semiBold,
-            color: colors.blue500,
+            color: colors.black,
             fontSize: fontSize.xl,
             lineHeight: fontSize.xxl,
             width: "75%"
@@ -84,7 +84,7 @@ const FinancialInstitutionItemCard = ({ onPress, name, ifsc, branchName, company
             flexDirection: "row", 
             alignItems: "center", 
             backgroundColor: colors.green500, 
-            borderRadius: 5, 
+            borderRadius: 3, 
             paddingVertical: 2, 
             paddingHorizontal: spacing.sm 
         },
@@ -128,14 +128,14 @@ const FinancialInstitutionItemCard = ({ onPress, name, ifsc, branchName, company
                         </View>
                     </View> */}
 
-                {
+                {/* {
                     (address?.city) ?
                     <View style={styles.footer}>
                         <Text style={styles.city}>{address?.city.toUpperCase()}</Text>
                     </View> : <View style={styles.footer}>
                         <Text style={styles.city}>N/A</Text>
                     </View>
-                }
+                } */}
 
             </View>
 

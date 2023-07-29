@@ -5,11 +5,10 @@ import { useTheme } from "../theme/ThemeProvider";
 // import { HOME_MAJOR_MENU_DATA, HOME_MINOR_MENU_DATA } from "../data/HomeData";
 // import MajorMenu from "../components/Common/MajorMenu";
 // import MinorMenu from "../components/Common/MinorMenu";
-import { Ionicons } from '@expo/vector-icons';
-import CustomToolTip from "../components/Common/CustomToolTip"
 import { homeCarouselData } from "../data/Carouseldata";
 import CustomCarousel from "../components/Common/Carousel";
 import FinancialInstitutionItemCard from "../components/Common/FinancialInstitutionItemCard";
+import ItemRate from "../components/Common/ItemRateCard";
 
 const HomeScreen = () => {
 
@@ -18,7 +17,7 @@ const HomeScreen = () => {
   const styles = StyleSheet.create({
     container: {
       paddingHorizontal: spacing.lg,
-      paddingBottom: spacing.u56 + spacing.sm
+      paddingBottom: spacing.u56 + spacing.u90
     },
     header: {
       display: "flex",
@@ -39,23 +38,46 @@ const HomeScreen = () => {
       fontSize: fontSize.md,
       lineHeight: spacing.lg,
       color: colors.blue500
+    },
+    vendorListContainer: {
+      marginTop: spacing.md
+    },
+    vendorListHeader: {
+      color: colors.green600,
+      textTransform: "capitalize",
+      fontFamily: fontFamily.semiBold,
+      fontSize: fontSize.xxl,
+      lineHeight: fontSize.xxxl,
+    },
+    vendorList: {
+      marginTop: spacing.md
+    },
+    itemListHeader: {
+      color: colors.green600,
+      textTransform: "capitalize",
+      fontFamily: fontFamily.semiBold,
+      fontSize: fontSize.xxl,
+      lineHeight: fontSize.xxxl,
+    },
+    itemList: {
+      marginTop: spacing.md
     }
   });
 
   return (
     <CustomSafeView>
 
-      <ScrollView>
-        <View style={styles.container}>
 
-          <StatusBar barStyle="dark-content" backgroundColor={colors.white100} />
+      <View style={styles.container}>
 
-          <HomeHeader />
+        <StatusBar barStyle="dark-content" backgroundColor={colors.white100} />
+
+        <HomeHeader />
+
+        <ScrollView>
 
           <View style={styles.header}>
-
             <Text style={styles.headertext}>What we do ?</Text>
-
           </View>
 
           {/* <MajorMenu title="home" menuData={HOME_MAJOR_MENU_DATA} />
@@ -63,19 +85,84 @@ const HomeScreen = () => {
 
           <CustomCarousel carouselData={homeCarouselData} />
 
-          <FinancialInstitutionItemCard 
-            onPress={()=>{}}
-            name="Name"
-            ifsc="PCMC"
-            branchName="PCMC"
-            companyName="Vendor"
-            poc=""
-            pocNumber=""
-            address={{city:"Address"}}
-          />
+          <View style={styles.vendorListContainer}>
+            <Text style={styles.vendorListHeader}>
+              Our Best Vendors
+            </Text>
+            <View style={styles.vendorList}>
+              <FinancialInstitutionItemCard
+                onPress={() => { }}
+                name="Name"
+                ifsc="PCMC"
+                branchName="PCMC"
+                companyName="Vendor"
+                poc=""
+                pocNumber=""
+                address={{ city: "Address" }}
+              />
+              <FinancialInstitutionItemCard
+                onPress={() => { }}
+                name="Name"
+                ifsc="PCMC"
+                branchName="PCMC"
+                companyName="Vendor"
+                poc=""
+                pocNumber=""
+                address={{ city: "Address" }}
+              />
+              <FinancialInstitutionItemCard
+                onPress={() => { }}
+                name="Name"
+                ifsc="PCMC"
+                branchName="PCMC"
+                companyName="Vendor"
+                poc=""
+                pocNumber=""
+                address={{ city: "Address" }}
+              />
+            </View>
+          </View>
 
-        </View>
-      </ScrollView>
+          <View>
+            <Text style={styles.itemListHeader}>
+              Our Best Rates
+            </Text>
+            <View style={styles.itemList}>
+              <ItemRate
+                onPress={() => { }}
+                name="Name"
+                ifsc="₹10/kg"
+                branchName="PCMC"
+                companyName="Newspaper"
+                poc=""
+                pocNumber=""
+                address={{ city: "Address" }}
+              />
+              <ItemRate
+                onPress={() => { }}
+                name="Name"
+                ifsc="₹10/kg"
+                branchName="PCMC"
+                companyName="Newspaper"
+                poc=""
+                pocNumber=""
+                address={{ city: "Address" }}
+              />
+              <ItemRate
+                onPress={() => { }}
+                name="Name"
+                ifsc="₹10/kg"
+                branchName="PCMC"
+                companyName="Newspaper"
+                poc=""
+                pocNumber=""
+                address={{ city: "Address" }}
+              />
+            </View>
+          </View>
+
+        </ScrollView>
+      </View>
     </CustomSafeView>
   );
 };
